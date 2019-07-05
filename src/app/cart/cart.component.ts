@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {CartService} from './../cart.service';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
               private formBuilder: FormBuilder) {
       this.items = this.cartService.getItems();
       this.checkedForm = formBuilder.group({
-        name: '',
+        name: ['', Validators.minLength(2)],
         address: formBuilder.group({
           street: '',
           city: '',
@@ -26,6 +26,8 @@ export class CartComponent implements OnInit {
         })
       });
   }
+
+  // 9-reactive-forms-form-validation
 
   ngOnInit() {
   }
