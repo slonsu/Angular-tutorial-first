@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {CartService} from './../cart.service';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -10,9 +11,15 @@ import {CartService} from './../cart.service';
 
 export class CartComponent implements OnInit {
   items;
+  checkedForm;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private formBuilder: FormBuilder) {
       this.items = this.cartService.getItems();
+      this.checkedForm = formBuilder.group({
+        name: '',
+        address: ''
+      });
   }
 
   ngOnInit() {
@@ -21,5 +28,10 @@ export class CartComponent implements OnInit {
   remove(data) {
     this.cartService.deleteItem(data);
     this.items = this.cartService.getItems();
+  }
+
+  onSubmit(data) {
+    console.log(data);
+    this.checkedForm.reset();
   }
 }
