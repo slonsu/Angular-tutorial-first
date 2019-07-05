@@ -30,8 +30,18 @@ export class CartComponent implements OnInit {
     this.items = this.cartService.getItems();
   }
 
+  // 6-reactive-forms-managing-values
+
   onSubmit(data) {
     console.log(data);
     this.checkedForm.reset();
   }
+
+  resetForm() {
+    this.checkedForm.patchValue({
+      name: 'Roman'
+    });
+  }
+
+  // 7-Reactive-forms-advanced-managing-values
 }
