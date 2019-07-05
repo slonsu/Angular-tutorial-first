@@ -10,6 +10,8 @@
     </p>
 
     <button (click)="share()">Share</button>
+    <button *ngIf="hide(product)" (click)="addToWishList(product)">Add to wishlist</button>
+    <button *ngIf="!hide(product)" (click)="removeFromWishList(product)">Remove</button>
 
     <app-product-alerts 
         [product]="product"

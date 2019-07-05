@@ -1,14 +1,7 @@
-<h3>Cart</h3>
-
-<p>
-    <a routerLink="/shipping">Shipping prices</a>
-</p>
+<h3>WishList</h3>
 
 <div class="cart-item" *ngFor="let item of items">
     <span>{{item.name}}</span>
     <span>{{item.price}}</span>
     <button (click)="remove(item)">Remove</button>
 </div>
-
-<!--SCOPE-->
-4-shipping prices
