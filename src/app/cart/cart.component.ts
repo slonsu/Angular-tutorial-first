@@ -17,4 +17,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  remove(data) {
+    this.cartService.deleteItem(data);
+    this.items = this.cartService.getItems();
+  }
 }

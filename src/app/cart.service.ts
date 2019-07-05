@@ -17,6 +17,14 @@ export class CartService {
         return this.items;
     }
 
+    deleteItem(data) {
+        for(let i = 0; i < this.items.length; i++){
+            if(this.items[i] = data){
+                this.items.splice(i, 1);
+            }
+        }
+    }
+
     clearCart() {
         this.items = [];
         return this.items;
