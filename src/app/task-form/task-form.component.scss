@@ -1,0 +1,10 @@
+.test {
+    label {
+        text-transform: none;
+
+        &::before {
+            content: '*';
+            color:  #ff0000;
+        }
+    }
+}
