@@ -1,0 +1,17 @@
+<p>task-form works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit(checkedForm.value)">
+    <label>
+        E-mail:
+        <input type="text" formControlName="email">
+    </label>
+    <label>
+        Password:
+        <input type="password" formControlName="password">
+    </label>
+    <label>
+        Confirm Password:
+        <input type="password" formControlName="repassword">
+    </label>
+
+    <button type="submit" class="button" [disabled]="registerForm.status==='INVALID' || registerForm.controls.password.value !== registerForm.controls.repassword.value">Register</button>
+</form>
