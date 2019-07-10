@@ -6,4 +6,18 @@
     </li>
 </ul>
 
+<select (change)="selectCurrency1($event.target.value)">
+    <option [value]="'None'">None</option>
+    <option [value]="rate.value" *ngFor="let rate of rates">{{rate.currency}}</option>
+</select>
+<br>
+<input type="number" (change)="setCurrency1($event.target.value)" [value]="currency1">
+<br>
+<select (change)="selectCurrency2($event.target.value)">
+    <option [value]="'None'">None</option>
+    <option [value]="rate.value" *ngFor="let rate of rates">{{rate.currency}}</option>
+</select>
+<br>
+<input type="number" (change)="setCurrency2($event.target.value)" [value]="currency2">
+
 <p *ngIf="length">We recieved: {{length}} items</p>
