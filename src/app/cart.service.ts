@@ -1,5 +1,4 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
     providedIn: 'root'
@@ -7,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class CartService {
     items = new Set();
-    constructor(private http: HttpClient) {
+    constructor() {
     }
 
     addToCart(product) {
@@ -20,9 +19,5 @@ export class CartService {
 
     deleteItem(data) {
         this.items.delete(data);
-    }
-
-    getShippingCosts() {
-        return this.http.get('/assets/shipping.json');
     }
 }
