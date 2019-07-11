@@ -32,7 +32,7 @@ export class UserService {
   checkUser(value) {
     for (const user of this.users) {
       if (user.name === value.name && user.password === value.password) {
-        alert('Logged in successfully');
+        alert('Logged in successfully (login button should become logout button "task 2")');
         this.allow();
       }
     }

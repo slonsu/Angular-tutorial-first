@@ -14,8 +14,12 @@
     Guard
 </a>
 
-<a [routerLink]="['/login']" class="button fancy-button">
+<a [routerLink]="['/login']" class="button fancy-button" *ngIf="!userService.isEnabled()">
     Login
+</a>
+
+<a [routerLink]="['/login']" (click)="logout()" class="button fancy-button" *ngIf="userService.isEnabled()">
+    Logout
 </a>
 
 <a [routerLink]="['/register']" class="button fancy-button">

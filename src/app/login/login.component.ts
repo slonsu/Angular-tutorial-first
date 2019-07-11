@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(value) {
     this.userService.checkUser(value);
+    this.loginForm.reset();
   }
 
 }
