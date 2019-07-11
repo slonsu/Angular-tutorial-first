@@ -26,7 +26,7 @@
     Register
 </a>
 
-<a [routerLink]="['/user']" class="button fancy-button">
+<a [routerLink]="['/user']" class="button fancy-button" *ngIf="userService.isEnabled()">
     Users
 </a>
 
