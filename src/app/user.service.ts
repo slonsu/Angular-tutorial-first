@@ -32,6 +32,7 @@ export class UserService {
   checkUser(value) {
     for (const user of this.users) {
       if (user.name === value.name && user.password === value.password) {
+        alert('Logged in successfully');
         this.allow();
       }
     }
