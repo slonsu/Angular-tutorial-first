@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsComponent } from './news/news.component';
 import { ArticleComponent } from './article/article.component';
 import { ErrorComponent } from './error/error.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -33,23 +34,24 @@ import { ErrorComponent } from './error/error.component';
     DashboardComponent,
     NewsComponent,
     ArticleComponent,
-    ErrorComponent
+    ErrorComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: ProductListComponent},
-      {path: 'products/:productId', component: ProductDetailsComponent},
-      {path: 'cart', component: CartComponent},
-      {path: 'shipping', component: ShippingComponent},
-      {path: 'wishlist', component: WishlistComponent},
-      {path: 'currency', component: CurrencyComponent},
-      {path: 'dashboard', component: DashboardComponent},
-      {path: 'dashboard/news', component: NewsComponent},
-      {path: 'dashboard/news/:articleId', component: ArticleComponent},
-      {path: 'error', component: ErrorComponent},
+      {path: '', data: {name: 'Home'}, component: ProductListComponent},
+      {path: 'products/:productId', data: {name: 'Product'}, component: ProductDetailsComponent},
+      {path: 'cart', data: {name: 'Cart'}, component: CartComponent},
+      {path: 'shipping', data: {name: 'Shipping'}, component: ShippingComponent},
+      {path: 'wishlist', data: {name: 'Wishlist'}, component: WishlistComponent},
+      {path: 'currency', data: {name: 'Currency'}, component: CurrencyComponent},
+      {path: 'dashboard', data: {name: 'Dashboard'}, component: DashboardComponent},
+      {path: 'dashboard/news', data: {name: 'News'}, component: NewsComponent},
+      {path: 'dashboard/news/:articleId', data: {name: 'Article'}, component: ArticleComponent},
+      {path: 'error', data: {name: 'Error'}, component: ErrorComponent},
       {path: '**', redirectTo: 'error'}
     ]),
     ReactiveFormsModule,
