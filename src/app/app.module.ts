@@ -22,6 +22,10 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { AdminComponent } from './admin/admin.component';
 import { GuardComponent } from './guard/guard.component';
 import { AdminGuard } from './admin.guard';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+import { UserGuard } from './user.guard';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,10 @@ import { AdminGuard } from './admin.guard';
     ErrorComponent,
     BreadcrumbsComponent,
     AdminComponent,
-    GuardComponent
+    GuardComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -57,8 +64,11 @@ import { AdminGuard } from './admin.guard';
       {path: 'dashboard/news', data: {name: 'News'}, component: NewsComponent},
       {path: 'dashboard/news/:articleId', data: {name: 'Article'}, component: ArticleComponent},
       {path: 'error', data: {name: 'Error'}, component: ErrorComponent},
-      {path: 'guard', data: {name: 'guard'}, component: GuardComponent},
-      {path: 'admin', data: {name: 'admin'}, component: AdminComponent, canActivate: [AdminGuard]},
+      {path: 'guard', data: {name: 'Guard'}, component: GuardComponent},
+      {path: 'admin', data: {name: 'Admin'}, component: AdminComponent, canActivate: [AdminGuard]},
+      {path: 'login', data: {name: 'Login'}, component: LoginComponent},
+      {path: 'register', data: {name: 'Register'}, component: RegisterComponent},
+      {path: 'user', data: {name: 'Users'}, component: UserComponent, canActivate: [UserGuard]},
       {path: '**', redirectTo: 'error'}
     ]),
     ReactiveFormsModule,

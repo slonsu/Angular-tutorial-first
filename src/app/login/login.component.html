@@ -1,0 +1,16 @@
+<h1>Login page</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div>
+        <label for="user">Username</label>
+        <input type="text" formControlName="user" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" required>
+    </div>
+
+    <button class="button" type="submit" [disabled]="loginForm.status ==='INVALID'">Login</button>
+</form>
+
+{{loginValue | json}}
