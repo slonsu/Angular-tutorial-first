@@ -54,4 +54,18 @@ export class EmployeesService {
 
     return throwError('Something bad happened, please try again later.');
   }
+
+  getEmployeeById(id) {
+    const url = `${this.host}/employee/${id}`;
+    return this.http
+      .get(url)
+      .pipe(map((employee: IEmployee) => {
+          return [{
+            id: employee.id,
+            name: employee.employee_name,
+            salary: employee.employee_salary,
+            age: employee.employee_age
+          }];
+      }));
+  }
 }

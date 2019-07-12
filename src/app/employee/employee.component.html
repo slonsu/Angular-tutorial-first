@@ -1,8 +1,4 @@
-<h1>Employees</h1>
-
-<a routerLink="/employees/register" class="button fancy-button">
-    Register
-</a>
+<h1>Employee</h1>
 
 <table>
     <thead>
@@ -11,16 +7,14 @@
             <th>Name</th>
             <th>Salary</th>
             <th>Age</th>
-            <th>Read Employee</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let employee of employees$ | async">
+        <tr *ngFor="let employee of employee$ | async">
             <td>{{employee.id}}</td>
             <td>{{employee.name}}</td>
             <td>{{employee.salary}}</td>
             <td>{{employee.age}}</td>
-            <td><a routerLink="/employees/{{employee.id}}">Read</a></td>
         </tr>
     </tbody>
 </table>

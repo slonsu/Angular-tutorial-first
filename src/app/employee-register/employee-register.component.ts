@@ -23,7 +23,7 @@ export class EmployeeRegisterComponent implements OnInit {
   }
 
   onSubmit(value) {
-    this.employeesService.addEmployees(value).subscribe(value => console.log(value));
+    this.employeesService.addEmployees(value).subscribe(val => console.log(val));
     this.registerForm.reset();
   }
 }
