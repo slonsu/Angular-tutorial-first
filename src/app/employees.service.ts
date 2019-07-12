@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { throwError } from 'rxjs';
 
 interface IEmployee {
   id: string;
@@ -33,5 +34,24 @@ export class EmployeesService {
           };
         });
       }));
+  }
+
+  addEmployees(value) {
+    const url = `${this.host}/create`;
+    return this.http
+      .post(url, value)
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.log('An error has accured: ', error.error.message);
+    } else {
+      console.error(`Backend returned code: ${error.status}, ` +
+      `body was: ${error.error}`);
+    }
+    alert('Error code: ' + error.status);
+
+    return throwError('Something bad happened, please try again later.');
   }
 }
