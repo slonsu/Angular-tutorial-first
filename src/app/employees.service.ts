@@ -68,4 +68,10 @@ export class EmployeesService {
           }];
       }));
   }
+
+  deleteEmployee(id) {
+    const url = `${this.host}/delete/${id}`;
+    alert('employee has been deleted');
+    return this.http.delete(url);
+  }
 }

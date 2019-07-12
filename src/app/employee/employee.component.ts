@@ -20,4 +20,8 @@ export class EmployeeComponent implements OnInit {
     });
     this.employee$ = this.employeesService.getEmployeeById(this.id);
   }
+
+  delete() {
+    this.employeesService.deleteEmployee(this.id).subscribe();
+  }
 }
