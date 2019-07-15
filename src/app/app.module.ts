@@ -29,6 +29,8 @@ import { UserGuard } from './user.guard';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { MenuComponent } from './menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,10 +55,12 @@ import { EmployeeComponent } from './employee/employee.component';
     UserComponent,
     EmployeesComponent,
     EmployeeRegisterComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot([

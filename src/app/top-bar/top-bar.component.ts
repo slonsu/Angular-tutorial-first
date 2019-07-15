@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 export class TopBarComponent implements OnInit {
 
     constructor(private userService: UserService) {
-        
+
     }
 
     ngOnInit() {
