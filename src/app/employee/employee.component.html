@@ -15,7 +15,13 @@
             <td>{{employee.name}}</td>
             <td>{{employee.salary}}</td>
             <td>{{employee.age}}</td>
-            <td><a (click)="delete()">Delete</a></td>
+            <td><a (click)="showDialog()">Delete</a></td>
         </tr>
     </tbody>
 </table>
+
+<div class="popup" *ngIf="popup" [@flyIn]="popup ? 'open': 'close'">
+    <p>are you sure?</p>
+    <button (click)="delete()">Yes</button>
+    <button (click)="hideDialog()">No</button>
+</div>

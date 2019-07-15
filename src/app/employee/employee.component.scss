@@ -1,0 +1,22 @@
+.popup {
+    left: 35%;
+    top: 35%;
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(182, 182, 182);
+    border-style: solid;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.1);
+
+    p {
+        margin-left: 150px;
+    }
+
+    button {
+        transform: translate(75px, 100px);
+        margin-left: 50px;
+    }
+}
