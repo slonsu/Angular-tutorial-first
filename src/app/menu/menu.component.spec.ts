@@ -5,7 +5,7 @@ describe('Testing MenuComponent', () => {
 
     beforeEach(() => {
         menuComponent = new MenuComponent();
-    })
+    });
 
     it('Default value should be false', () => {
         const isOpen = menuComponent.isOpen;

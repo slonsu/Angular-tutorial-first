@@ -22,6 +22,6 @@ describe('Auth Service tests', () => {
   });
 
   it('Method isEnabled should return the access value', () => {
-    expect(service.isEnabled()).toBe(service.access)
-  })
+    expect(service.isEnabled()).toBe(service.access);
+  });
 });
